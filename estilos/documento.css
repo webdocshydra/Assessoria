@@ -1,0 +1,320 @@
+/* CSS Document */
+
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --cor-1: #1495AE;
+    --cor-2: #1C4F63;
+    --cor-3: #03232D;
+    --cor-4: rgba(20,149,174,0.1);
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+#documento {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    scale: 1.0;
+    justify-self: start;
+}
+
+.pagina {
+    width: 595px;
+    height: 842px;
+
+    background-image: url(../recursos/documentos/marca-dagua.svg);
+	background-size: cover;
+    border: 1px solid var(--cor-3);
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#capa {
+    align-items: center;
+    justify-content: center;
+}
+
+#capa header {
+    position: absolute;
+    top: 0;
+
+    margin-top: 48px;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+}
+
+#capa h1 {
+    margin: 0;
+
+    color: var(--cor-2);
+    font-family: 'Montserrat';
+    font-weight: 800;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 1.40px;
+    font-feature-settings: 'pnum' 1, 'lnum' 1;
+}
+
+#capa h2 {
+    margin: 0;
+
+    color: var(--cor-2);
+    font-family: 'Montserrat';
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2.80px;
+    font-feature-settings: 'pnum' 1, 'lnum' 1;
+}
+
+#assessoria-nomes {
+    display: flex;
+    flex-direction: column;
+}
+
+#capa h3 {
+    margin: 0;
+
+    color: var(--cor-3);
+    font-family: 'Montserrat';
+    font-weight: 800;
+    font-size: 48px;
+    word-wrap: break-word;
+    text-align: center;
+    font-feature-settings: 'pnum' 1, 'lnum' 1;
+}
+
+#capa footer {
+    position: absolute;
+    bottom: 0;
+    
+    width: 100%;
+    height: 64px;
+
+    align-content: center;
+
+    background-color: var(--cor-1);
+
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 12px;
+    text-align: center;
+    font-feature-settings: 'pnum' 1, 'lnum' 1;
+}
+
+#pagina1 header {
+    height: 20px;
+
+    background-color: var(--cor-1);
+
+    margin-bottom: 36px;
+}
+
+#pagina2 header {
+    height: 20px;
+
+    background-color: var(--cor-1);
+
+    margin-bottom: 36px;
+}
+
+.pagina-conteudo {
+    padding-left: 36px;
+    padding-right: 36px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+}
+
+.pagina-conteudo section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.pagina-conteudo h1 {
+    margin: 0;
+
+    color: var(--cor-1);
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 14px;
+
+    line-height: 17px;
+    font-feature-settings: 'pnum' 1, 'lnum' 1;
+}
+
+.pagina-conteudo p {
+    margin: 0;
+
+    color: var(--m3-on-surface);
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 12px;
+
+    line-height: 14px;
+    font-feature-settings: 'pnum' 1, 'lnum' 1;
+
+    overflow: hidden; /* esconde qualquer conteúdo que ultrapasse a largura */
+    white-space: nowrap; /* faz com que o texto não quebre para a próxima linha */
+    text-overflow: ellipsis; /* adiciona "..." para indicar que o texto foi truncado */
+}
+
+.pagina-conteudo span {
+    font-weight: normal;
+
+    line-height: 14px;
+    font-feature-settings: 'pnum' 1, 'lnum' 1;
+}
+
+.pagina-divisoria {
+    width: 595px;
+    height: 4px;
+    background-color: var(--cor-2);
+
+    margin-left: -36px;
+}
+
+.pagina-conteudo h2 {
+    margin: 0;
+
+    color: var(--m3-on-surface);
+    font-family: 'Montserrat';
+    font-weight: normal;
+    font-size: 36px;
+
+    line-height: 44px;
+    font-feature-settings: 'pnum' 1, 'lnum' 1;
+}
+
+.pagina-conteudo h3 {
+    margin: 0;
+
+    color: var(--m3-on-surface);
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 36px;
+
+    line-height: 44px;
+    font-feature-settings: 'pnum' 1, 'lnum' 1;
+}
+
+span#total {
+    font-weight: 600;
+    font-feature-settings: 'pnum' 1, 'lnum' 1;
+}
+
+.formas-pagamento {
+    height: 44px;
+
+    background-color: var(--cor-4);
+    border-radius: 4px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.opcoes {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.opcao {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.opcao span {
+    line-height: 24px;
+    color: var(--cor-1);
+}
+
+.opcao p {
+    margin: 0;
+
+    color: var(--m3-on-surface);
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0.78px;
+    font-feature-settings: 'pnum' 1, 'lnum' 1;
+}
+
+span#pag-texto {
+    display: flex;
+
+    text-align: justify;
+
+    width: 523px;
+
+    white-space: normal;
+
+    line-height: 18px;
+}
+
+#pagina1 {
+    position: relative;
+}
+
+#pagina2 {
+    position: relative;
+}
+
+#pagina1 footer{
+    position: absolute;
+    bottom: 24px;
+    right: 36px;
+
+    color: var(--m3-on-surface);
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: right;
+    font-feature-settings: 'pnum' 1, 'lnum' 1;
+}
+
+#pagina2 footer{
+    position: absolute;
+    bottom: 24px;
+    right: 36px;
+
+    color: var(--m3-on-surface);
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: right;
+    font-feature-settings: 'pnum' 1, 'lnum' 1;
+}
+
+p#tratamento-dados {
+    font-size: 14px;
+    line-height: 21px;
+    text-align: justify;
+
+    white-space: normal;
+}

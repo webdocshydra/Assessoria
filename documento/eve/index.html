@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessoria - EVE</title>
+    <link rel="icon" href="../../favicon_doc.png">
+    <link rel="stylesheet" href="../../estilos/config.css">
+    <link rel="stylesheet" href="../../estilos/documento.css">
+    <link rel="stylesheet" href="../../estilos/exportar.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+    <div id="config">
+        <header>
+            <img src="../../recursos/hydra/logo.svg" alt="LogoHydra" style="height: 36px;">
+        </header>
+        <h1>Configurações</h1>
+        <div class="item">
+            <label for="i-cnpj">Consulta de CNPJ</label>
+            <div id="pesquisar">
+                <input type="text" placeholder="CNPJ" id="i-cnpj">
+                <button class="fill" id="consultar">
+                    <span class="material-symbols-rounded">search</span>
+                </button>
+            </div>
+            <p class="info">Utilize somente números.</p>
+            <iframe id="iframe"></iframe>
+        </div>
+        <div class="item" id="verificacao">
+            <label for="i-code">Verificação da Consulta</label>
+            <textarea placeholder="Copie o código exibido no campo preto e cole-o aqui" id="i-code"></textarea>
+            <button class="outline com-icone" id="verificar">
+                <span class="material-symbols-rounded">frame_inspect</span>
+                <span>Verificar Dados</span>
+            </button>
+        </div>
+        <div class="item" id="resultado">
+            <label>Dados Verificados</label>
+            <p>
+                CNPJ: <span id="resultado-cnpj"></span>
+                <br>
+                Razão Social: <span id="resultado-rs"></span>
+            </p>
+            <button class="fill com-icone" id="preencher">
+                <span class="material-symbols-rounded">edit_document</span>
+                <span>Preencher Documento</span>
+            </button>
+        </div>
+        <div class="divisoria"></div>
+        <div class="item">
+            <label for="i-doc">Orçamento de:</label>
+            <input type="text" placeholder="[Documento]" id="i-doc">
+        </div>
+        <div class="item">
+            <label for="i-valor">Valor do Orçamento</label>
+            <span id="simbolo-real">R$</span>
+            <input type="text" placeholder="1.000,00" id="i-valor">
+        </div>
+        <div class="item">
+            <label for="i-telefone">Telefone do Cliente (WhatsApp)</label>
+            <input type="text" placeholder="(00) 90000-0000" id="i-telefone">
+        </div>
+        <button id="exportar">
+            <span class="material-symbols-rounded">download</span>
+            <span>EXPORTAR</span>
+        </button>
+    </div>
+    <div id="documento">
+        <div class="pagina" id="pagina1">
+            <header>
+                <img src="../../recursos/documentos/logo-asj.svg" alt="LogoAssessoria">
+                <div id="assessoria-nome">
+                    <h1>ASJ</h1>
+                    <h2>ASSESSORIA</h2>
+                </div>
+            </header>
+            <h3>ORÇAMENTO</h3>
+            <footer>EMITIDO EM <span id="dia">dd</span> DE <span id="mes">mm</span> DE <span id="ano">aaaa</span></footer>
+        </div>
+        <div class="pagina" id="pagina2">
+            <header></header>
+            <div class="pagina-conteudo">
+                <section>
+                    <h1>CLIENTE</h1>
+                    <p>CNPJ: <span id="cnpj">[CNPJ]</span></p>
+                    <p>Razão Social: <span id="razaosocial">[Razão Social]</span></p>
+                </section>
+                <section>
+                    <h1>INFORMAÇÕES DA EMPRESA</h1>
+                    <p>Data de Abertura: <span id="abertura">[Data de Abertura]</span></p>
+                    <p>Porte: <span id="porte">[Porte]</span></p>
+                    <p>Natureza Jurídica: <span id="naturezajuridica">[Natureza Jurídica]</span></p>
+                    <p>Capital Social: <span>R$ <span id="capitalsocial">[Capital Social]</span></span></p>
+                    <p>Endereço: <span><span id="logradouro">[Logradouro]</span>, <span id="numero">[Número]</span> - <span id="bairro">[Bairro]</span>, <span id="cidade">[Cidade]</span> - <span id="estado">[UF]</span></span></p>
+                    <p>Atividade (CNAES): <span><span id="atv-code">[ATV Código]</span> - <span id="atv-descricao">[ATV Descrição]</span></span></p>
+                </section>
+                <section>
+                    <h1>DADOS DE CONTATO</h1>
+                    <p>Telefones: <span id="telefone">[CNPJ]</span></p>
+                    <p>E-mail: <span id="email">[Razão Social]</span></p>
+                </section>
+            </div>
+        </div>
+        <div class="pagina" id="pagina3">
+            <header></header>
+            <div class="pagina-conteudo">
+                
+            </div>
+        </div>
+    </div>
+    <script src="../../scripts/hoje.js"></script>
+    <script src="../../scripts/consulta.js"></script>
+    <script src="../../scripts/verificar.js"></script>
+</body>
+
+</html>

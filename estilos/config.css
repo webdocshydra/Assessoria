@@ -1,0 +1,237 @@
+/* CSS Document */
+
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+    --hydra-royal: #010080;
+    --hydra-dark: #00002E;
+
+    --m3-surface: #fefefe;
+    --m3-on-surface: #1a1a1a;
+    --m3-outline: grey;
+}
+
+/* Estilos de CONFIG */
+
+#config {
+    margin: 20px 20px 0px 20px;
+    width: 300px;
+    box-sizing: border-box;
+    padding: 16px 16px 88px 16px;
+
+    background-color: var(--m3-surface);
+    border: 1px solid var(--m3-outline);
+    border-radius: 16px;
+
+    display: block;
+
+    position: relative;
+}
+
+#config header {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#config h1 {
+    color: var(--m3-on-surface);
+    font-family: 'Poppins';
+    font-size: 16px;
+    font-weight: 600;
+    font-feature-settings: 'pnum' 1, 'lnum' 1;
+
+    margin: 0px;
+}
+
+.divisoria {
+    margin-top: 8px;
+
+    width: auto;
+    height: 1px;
+
+    background-color: var(--m3-outline);
+    border-radius: 1px;
+}
+
+/* Estilos de ITEM */
+
+.item {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    position: relative;
+}
+
+.item label {
+    color: var(--m3-on-surface);
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 500;
+    font-feature-settings: 'pnum' 1, 'lnum' 1;
+
+    display: block;
+}
+
+.item button {
+    cursor: pointer;
+    
+    height: 40px;
+    box-sizing: border-box;
+
+    border-radius: 20px;
+
+    display: inline-flex;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 14px;
+}
+
+#pesquisar {
+    display: inline-flex;
+    gap: 4px;
+}
+
+/* Estilos de INPUT E TEXTAREA*/
+
+input {
+    width: auto;
+    height: 40px;
+    box-sizing: border-box;
+    padding-left: 8px;
+
+    border: 1px solid var(--m3-outline);
+    border-radius: 10px;
+
+    color: var(--m3-on-surface);
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 14px;
+
+    overflow: hidden; /* esconde qualquer conteúdo que ultrapasse a largura */
+    white-space: nowrap; /* faz com que o texto não quebre para a próxima linha */
+    text-overflow: ellipsis; /* adiciona "..." para indicar que o texto foi truncado */
+}
+
+input#i-cnpj {
+    width: 222px;
+}
+
+.info {
+    margin: 0px 0px 0px 2px;
+
+    color: var(--m3-on-surface);
+    font-family: 'Poppins';
+    font-weight: normal;
+    font-size: 12px;
+}
+
+textarea {
+    box-sizing: border-box;
+    width: 266px;
+    height: 50px;
+
+    min-width: 266px;
+    max-width: 266px;
+    min-height: 50px;
+
+    padding: 4px 8px;
+
+    border: 1px solid var(--m3-outline);
+    border-radius: 10px;
+
+    color: var(--m3-on-surface);
+    font-family: 'Roboto Mono';
+    font-weight: normal;
+    font-size: 12px;
+}
+
+/* Estilos de BOTÃO */
+
+.fill {
+    background-color: var(--cor-2);
+    border: none;
+
+    color: white;
+}
+
+.fill:hover {
+    background-color: var(--cor-1);
+}
+
+.outline {
+    background-color: var(--m3-surface);
+    border: 1px solid var(--m3-outline);
+    
+    color: var(--cor-2);
+}
+
+.outline:hover {
+    color: var(--cor-1);
+
+    font-weight: 600;
+}
+
+.com-icone {
+    gap: 8px;
+}
+
+button#consultar {
+    width: 40px;
+}
+
+/* Estilos de IFRAME */
+
+iframe {
+    display: block;
+    border: none;
+    border-radius: 8px;
+    height: 70px;
+}
+
+/* Estilos de RESULTADO */
+
+#resultado {
+    color: var(--m3-on-surface);
+    font-family: 'Poppins';
+    font-weight: normal;
+    font-size: 12px;
+}
+
+#resultado p {
+    margin: 0;
+}
+
+#resultado button {
+    margin-top: 4px;
+}
+
+/* Estilos de VALOR */
+
+#simbolo-real {
+    position: absolute;
+    margin-top: 35px;
+    margin-left: 9px;
+    margin-bottom: 0px;
+
+    color: var(--m3-on-surface);
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 14px;
+}
+
+input#i-total {
+    padding-left: 30px;
+}

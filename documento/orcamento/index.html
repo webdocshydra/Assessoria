@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessoria - Orçamento</title>
+    <link rel="icon" href="../../favicon_doc.png">
+    <link rel="stylesheet" href="../../estilos/config.css">
+    <link rel="stylesheet" href="../../estilos/documento.css">
+    <link rel="stylesheet" href="../../estilos/exportar.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <div id="config">
+        <header>
+            <img src="../../recursos/hydra/logo.svg" alt="LogoHydra" style="height: 36px;">
+        </header>
+        <h1>Configurações</h1>
+        <div class="item">
+            <label for="i-cnpj">Consulta de CNPJ</label>
+            <div id="pesquisar">
+                <input type="text" placeholder="CNPJ" id="i-cnpj">
+                <button class="fill" id="consultar">
+                    <span class="material-symbols-rounded">search</span>
+                </button>
+            </div>
+            <p class="info">Utilize somente números.</p>
+            <iframe id="iframe"></iframe>
+        </div>
+        <div class="item" id="verificacao">
+            <label for="i-code">Verificação da Consulta</label>
+            <textarea placeholder="Copie o código exibido no campo preto e cole-o aqui." id="i-code"></textarea>
+            <button class="outline com-icone" id="verificar">
+                <span class="material-symbols-rounded">frame_inspect</span>
+                <span>Verificar Dados</span>
+            </button>
+        </div>
+        <div class="item" id="resultado">
+            <label>Dados Verificados</label>
+            <p>
+                CNPJ: <span id="resultado-cnpj"></span>
+                <br>
+                Razão Social: <span id="resultado-rs"></span>
+            </p>
+            <button class="fill com-icone" id="preencher">
+                <span class="material-symbols-rounded">edit_document</span>
+                <span>Preencher Documento</span>
+            </button>
+        </div>
+        <div class="divisoria"></div>
+        <div class="item">
+            <label for="i-doc">Orçamento de:</label>
+            <input type="text" placeholder="[Documento]" id="i-doc">
+        </div>
+        <div class="item">
+            <label for="i-total">Valor Total do Orçamento</label>
+            <span id="simbolo-real">R$</span>
+            <input type="text" placeholder="1000,00" id="i-total">
+            <p class="info">Utilize somente números e vírgulas.</p>
+        </div>
+        <div class="item">
+            <label for="i-telefone">Telefone do Cliente (WhatsApp)</label>
+            <input type="text" placeholder="(00) 90000-0000" id="i-telefone">
+        </div>
+        <button id="exportar">
+            <span class="material-symbols-rounded">download</span>
+            <span>EXPORTAR</span>
+        </button>
+    </div>
+    <div id="documento">
+        <div class="pagina" id="capa">
+            <header>
+                <img src="../../recursos/documentos/logo-asj.svg" alt="LogoAssessoria">
+                <div id="assessoria-nome">
+                    <h1>ASJ</h1>
+                    <h2>ASSESSORIA</h2>
+                </div>
+            </header>
+            <h3>ORÇAMENTO</h3>
+            <footer>EMITIDO EM <span id="dia">[dd]</span> DE <span id="mes">[mm]</span> DE <span id="ano1">[aaaa]</span></footer>
+        </div>
+        <div class="pagina" id="pagina1">
+            <header></header>
+            <div class="pagina-conteudo">
+                <section>
+                    <h1>ORÇAMENTO</h1>
+                    <p>Documento: <span id="doc">[DOCUMENTO]</span></p>
+                    <p>Finalidade: <span>Empréstimo Empresarial</span></p>
+                    <p>CNPJ do Cliente: <span id="cnpj">[CNPJ]</span></p>
+                    <p>Razão Social do Cliente: <span id="razaosocial">[RAZÃO SOCIAL]</span></p>
+                    <p>Telefone (WhatsApp): <span id="telefone">[TELEFONE]</span></p>
+                    <p>Válido até: <span>Dezembro de <span id="ano2">[aaaa]</span></span></p>
+                </section>
+                <div class="pagina-divisoria"></div>
+                <section>
+                    <h1>TRIBUTOS DE AVALIAÇÃO</h1>
+                    <h2>R$ <span id="tributos">[TRIBUTOS]</span></h2>
+                </section>
+                <section>
+                    <h1>CUSTO DE OPERAÇÃO</h1>
+                    <h2>R$ <span id="custo">350,00</span></h2>
+                </section>
+                <section>
+                    <h1>VALOR TOTAL</h1>
+                    <h3>R$ <span id="total">[TOTAL]</span></h3>
+                </section>
+                <div class="pagina-divisoria"></div>
+                <section>
+                    <h1>FORMAS DE PAGAMENTO</h1>
+                    <div class="formas-pagamento">
+                        <div class="opcoes">
+                            <div class="opcao">
+                                <span class="material-icons">pix</span>
+                                <p>PIX</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p><span id="pag-texto">Após a detecção do valor em nossa conta, aguarde o prazo de duas horas para a entrega do serviço solicitado.</span></p>
+                </section>
+            </div>
+            <footer>1</footer>
+        </div>
+        <div class="pagina" id="pagina2">
+            <header></header>
+            <div class="pagina-conteudo">
+                <section>
+                    <h1>TRATAMENTO DE DADOS</h1>
+                    <p id="tratamento-dados"><span>
+                        A LGPD estabelece que os titulares possuem direitos sobre os dados pessoais tratados, a contratada possui meios de comunicação com o titular para que essas solicitações sejam recebidas, analisadas e atendidas, sendo o resultado positivo ou negativo.
+                        <br><br>
+                        Pela natureza de nosso negócio é possível que exista o compartilhamento de dados pessoais com a nossa empresa durante o estabelecimento de contratos de prestação de serviço com os clientes.
+                        <br><br>
+                        Com isso, a contratada segue o papel de operador dos dados de acordo com o que for determinado pelo cliente que assume o papel de controlador dos dados pessoais.
+                        <br><br>
+                        Quando houver o compartilhamento pela contratada com terceiros, este será realizado se for absolutamente necessário para o alcance dos resultados para os quais eles são mantidos e quando existirem arranjos contratuais e mecanismos de segurança apropriados.
+                        <br><br>
+                        Atenciosamente,
+                        <br>
+                    </span>Administração - ASJ Assessoria</p>
+                </section>
+            </div>
+            <footer>2</footer>
+        </div>
+    </div>
+    <script src="../../scripts/carregar.js"></script>
+    <script src="../../scripts/hoje.js"></script>
+    <script src="../../scripts/consulta.js"></script>
+    <script src="../../scripts/verificar.js"></script>
+    <script src="../../scripts/preencher.js"></script>
+    <script src="../../scripts/inputs.js"></script>
+    <script src="../../scripts/telefone.js"></script>
+    <script src="../../scripts/valor.js"></script>
+    <script src="../../scripts/imprimir.js"></script>
+</body>
+
+</html>
