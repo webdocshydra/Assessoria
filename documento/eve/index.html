@@ -8,11 +8,13 @@
     <link rel="icon" href="../../favicon_doc.png">
     <link rel="stylesheet" href="../../estilos/config.css">
     <link rel="stylesheet" href="../../estilos/documento.css">
+    <link rel="stylesheet" href="../../estilos/grafico.css">
     <link rel="stylesheet" href="../../estilos/exportar.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 
 <body>
+    <div id="eve"></div>
     <div id="config">
         <header>
             <img src="../../recursos/hydra/logo.svg" alt="LogoHydra" style="height: 36px;">
@@ -31,7 +33,7 @@
         </div>
         <div class="item" id="verificacao">
             <label for="i-code">Verificação da Consulta</label>
-            <textarea placeholder="Copie o código exibido no campo preto e cole-o aqui" id="i-code"></textarea>
+            <textarea placeholder="Copie o código exibido no campo preto e cole-o aqui." id="i-code"></textarea>
             <button class="outline com-icone" id="verificar">
                 <span class="material-symbols-rounded">frame_inspect</span>
                 <span>Verificar Dados</span>
@@ -51,25 +53,117 @@
         </div>
         <div class="divisoria"></div>
         <div class="item">
-            <label for="i-doc">Orçamento de:</label>
-            <input type="text" placeholder="[Documento]" id="i-doc">
+            <label for="i-telefone">Telefone do Cliente</label>
+            <input type="tel" placeholder="(00) 90000-0000" id="i-telefone">
         </div>
         <div class="item">
-            <label for="i-valor">Valor do Orçamento</label>
-            <span id="simbolo-real">R$</span>
-            <input type="text" placeholder="1.000,00" id="i-valor">
+            <label for="i-email">E-mail do Cliente</label>
+            <input type="email" placeholder="cliente@exemplo.com" id="i-email">
         </div>
         <div class="item">
-            <label for="i-telefone">Telefone do Cliente (WhatsApp)</label>
-            <input type="text" placeholder="(00) 90000-0000" id="i-telefone">
+            <label for="select-mes">Qual o mês 01?</label>
+            <select id="select-mes">
+                <option value="[MÊS 01]" disabled selected>Selecione uma opção</option>
+                <option value="Janeiro">Janeiro</option>
+                <option value="Fevereiro">Fevereiro</option>
+                <option value="Março">Março</option>
+                <option value="Abril">Abril</option>
+                <option value="Maio">Maio</option>
+                <option value="Junho">Junho</option>
+                <option value="Julho">Julho</option>
+                <option value="Agosto">Agosto</option>
+                <option value="Setembro">Setembro</option>
+                <option value="Outubro">Outubro</option>
+                <option value="Novembro">Novembro</option>
+                <option value="Dezembro">Dezembro</option>
+            </select>
         </div>
         <button id="exportar">
             <span class="material-symbols-rounded">download</span>
             <span>EXPORTAR</span>
         </button>
+    </div> 
+    <div id="config2">
+        <h1>Receitas / Despesas</h1>
+        <div class="item-duplo">
+            <div class="item">
+                <label for="i-receita1">Mês 1</label>
+                <span id="simbolo-real">R$</span>
+                <input type="text" placeholder="1000,00" class="dinheiro" id="i-receita1">
+            </div>
+            <div class="item">
+                <label for="i-despesa1">---</label>
+                <span id="simbolo-real">R$</span>
+                <input type="text" placeholder="1000,00" class="dinheiro" id="i-despesa1">
+            </div>
+            <div class="item">
+                <label for="i-receita2">Mês 2</label>
+                <span id="simbolo-real">R$</span>
+                <input type="text" placeholder="1000,00" class="dinheiro" id="i-receita2">
+            </div>
+            <div class="item">
+                <label for="i-despesa2">---</label>
+                <span id="simbolo-real">R$</span>
+                <input type="text" placeholder="1000,00" class="dinheiro" id="i-despesa2">
+            </div>
+            <div class="item">
+                <label for="i-receita3">Mês 3</label>
+                <span id="simbolo-real">R$</span>
+                <input type="text" placeholder="1000,00" class="dinheiro" id="i-receita3">
+            </div>
+            <div class="item">
+                <label for="i-despesa3">---</label>
+                <span id="simbolo-real">R$</span>
+                <input type="text" placeholder="1000,00" class="dinheiro" id="i-despesa3">
+            </div>
+            <div class="item">
+                <label for="i-receita4">Mês 4</label>
+                <span id="simbolo-real">R$</span>
+                <input type="text" placeholder="1000,00" class="dinheiro" id="i-receita4">
+            </div>
+            <div class="item">
+                <label for="i-despesa4">---</label>
+                <span id="simbolo-real">R$</span>
+                <input type="text" placeholder="1000,00" class="dinheiro" id="i-despesa4">
+            </div>
+            <div class="item">
+                <label for="i-receita5">Mês 5</label>
+                <span id="simbolo-real">R$</span>
+                <input type="text" placeholder="1000,00" class="dinheiro" id="i-receita5">
+            </div>
+            <div class="item">
+                <label for="i-receita5">---</label>
+                <span id="simbolo-real">R$</span>
+                <input type="text" placeholder="1000,00" class="dinheiro" id="i-despesa5">
+            </div>
+        </div>
+        <p class="info" style="margin-top: 8px; margin-left: 0px; text-align: center;">Utilize somente números e vírgulas.</p>
+        <div class="item" style="margin-top: 8px;">
+            <button class="fill" id="calcular">
+                <span>Calcular</span>
+            </button>
+        </div>
+        <div class="divisoria"></div>
+        <div class="item" id="calculos-resultados">
+            <label>Resultados</label>
+            <p>
+                Receita Total (Anual): <span>R$ <span id="receita-anual">[RECEITA ANUAL]</span></span>
+                <br>
+                Despesa Total (Anual): <span>R$ <span id="despesa-anual">[DESPESA ANUAL]</span></span>
+                <br>
+                Lucro Anual Estimado: <span>R$ <span id="lucro-anual">[LUCRO ANUAL]</span></span>
+                <br>
+                VPL: <span>R$ <span id="calculo-vpl">[VPL]</span></span>
+            </p>
+            <button class="fill com-icone" id="gerar-grafico">
+                <span class="material-symbols-rounded">add_chart</span>
+                <span>Gerar Gráfico</span>
+            </button>
+        </div>
     </div>
+    
     <div id="documento">
-        <div class="pagina" id="pagina1">
+        <div class="pagina" id="capa">
             <header>
                 <img src="../../recursos/documentos/logo-asj.svg" alt="LogoAssessoria">
                 <div id="assessoria-nome">
@@ -78,9 +172,9 @@
                 </div>
             </header>
             <h3>ORÇAMENTO</h3>
-            <footer>EMITIDO EM <span id="dia">dd</span> DE <span id="mes">mm</span> DE <span id="ano">aaaa</span></footer>
+            <footer>EMITIDO EM <span id="dia">[dd]</span> DE <span id="mes">[mm]</span> DE <span id="ano1">[aaaa]</span></footer>
         </div>
-        <div class="pagina" id="pagina2">
+        <div class="pagina" id="pagina1">
             <header></header>
             <div class="pagina-conteudo">
                 <section>
@@ -99,21 +193,115 @@
                 </section>
                 <section>
                     <h1>DADOS DE CONTATO</h1>
-                    <p>Telefones: <span id="telefone">[CNPJ]</span></p>
-                    <p>E-mail: <span id="email">[Razão Social]</span></p>
+                    <p>Telefone: <span id="telefone">[TELEFONE]</span></p>
+                    <p>E-mail: <span id="email">[E-MAIL]</span></p>
+                </section>
+                <section>
+                    <h1>FATURAMENTO DA EMPRESA</h1>
+                    <div id="grafico">
+                        <div id="grafico-header">
+                            <div class="header-legenda">
+                                <div class="bloco-receita"></div>
+                                <div class="legenda">RECEITAS</div>
+                            </div>
+                            <div class="header-legenda">
+                                <div class="bloco-despesa"></div>
+                                <div class="legenda">DESPESAS</div>
+                            </div>
+                        </div>
+                        <div id="grafico-colunas">
+                            <div id="grafico-valores">
+                                <div class="gfc-valor" id="gfc-1">R$ 10.000</div>
+                                <div class="gfc-valor" id="gfc-2">R$ 7.500</div>
+                                <div class="gfc-valor" id="gfc-3">R$ 5.000</div>
+                                <div class="gfc-valor" id="gfc-4">R$ 2.500</div>
+                                <div class="gfc-valor">R$ 0,00</div>
+                            </div>
+                            <div class="gfc-coluna" id="coluna-mes1">
+                                <div class="coluna-receita" id="receita1"></div>
+                                <div class="coluna-despesa" id="despesa1"></div>
+                            </div>
+                            <div class="gfc-coluna" id="coluna-mes2">
+                                <div class="coluna-receita" id="receita2"></div>
+                                <div class="coluna-despesa" id="despesa2"></div>
+                            </div>
+                            <div class="gfc-coluna" id="coluna-mes3">
+                                <div class="coluna-receita" id="receita3"></div>
+                                <div class="coluna-despesa" id="despesa3"></div>
+                            </div>
+                            <div class="gfc-coluna" id="coluna-mes4">
+                                <div class="coluna-receita" id="receita4"></div>
+                                <div class="coluna-despesa" id="despesa4"></div>
+                            </div>
+                            <div class="gfc-coluna" id="coluna-mes5">
+                                <div class="coluna-receita" id="receita5"></div>
+                                <div class="coluna-despesa" id="despesa5"></div>
+                            </div>
+                        </div>
+                        <div id="grafico-footer">
+                            <div class="gfc-footer"></div>
+                            <div class="gfc-footer" id="mes1">Janeiro</div>
+                            <div class="gfc-footer" id="mes2">Fevereiro</div>
+                            <div class="gfc-footer" id="mes3">Março</div>
+                            <div class="gfc-footer" id="mes4">Abril</div>
+                            <div class="gfc-footer" id="mes5">Maio</div>
+                        </div>
+                    </div>
                 </section>
             </div>
+            <footer>1</footer>
         </div>
-        <div class="pagina" id="pagina3">
+        <div class="pagina" id="pagina2">
             <header></header>
             <div class="pagina-conteudo">
-                
+                <section>
+                    <h1>ANÁLISE DE INDICADORES</h1>
+                    <p>Valor Presente Líquido (VPL): <span>R$ <span id="vpl">[VPL]</span></span></p>
+                    <p>Taxa Interna de Retorno (TIR): <span>3,00%</span></p>
+                    <p>Payback (Retorno de Capital): <span>5,00%</span></p>
+                </section>
+                <div class="pagina-divisoria"></div>
+                <section>
+                    <h1>RESULTADOS GERAIS DO ESTUDO</h1>
+                    <p>Status do VPL: <span>Positivo</span></p>
+                    <p>Análise do TIR: <span>Maior que a taxa de desconto.</span></p>
+                    <p>Resumo: <span>Os investimentos podem ser aprovados e concluídos com sucesso.</span></p>
+                    <p>Análise Completa: <span id="analisecompleta"><br>
+                        Com base na meticulosa análise realizada, destaco com satisfação que identificamos um Valor Presente Líquido (VPL) positivo, sinalizando claramente a viabilidade econômica do investimento em questão. Ao mesmo tempo, a Taxa Interna de Retorno (TIR) mantém-se consistentemente acima da taxa de desconto aplicada, reforçando a atratividade financeira deste empreendimento.
+                        Esses indicadores favoráveis respaldam a conclusão de que a iniciativa de investir no desenvolvimento da empresa é não apenas sustentável, mas também promissora. A implementação iminente deste investimento tem o potencial não apenas de gerar retornos significativos, mas também de impulsionar consideravelmente o valor intrínseco da sua empresa.
+                    </span></p>
+                </section>
             </div>
+            <footer>2</footer>
+        </div>
+        <div class="pagina" id="contracapa">
+            <header>
+                <img src="../../recursos/documentos/logo-asj-branca.svg" alt="LogoAssessoria">
+                <div id="assessoria-nomes">
+                    <h1>ASJ</h1>
+                    <h2>ASSESSORIA</h2>
+                </div>
+            </header>
+            <footer>AGRADECEMOS A PREFERÊNCIA</footer>
         </div>
     </div>
+    <script src="../../scripts/carregar.js"></script>
     <script src="../../scripts/hoje.js"></script>
-    <script src="../../scripts/consulta.js"></script>
-    <script src="../../scripts/verificar.js"></script>
+    
+    <script src="../../scripts/consulta/consulta.js"></script>
+    <script src="../../scripts/consulta/verificar.js"></script>
+    <script src="../../scripts/consulta/preencher.js"></script>
+
+    <script src="../../scripts/eve/mes.js"></script>
+    <script src="../../scripts/eve/calcular.js"></script>
+    <script src="../../scripts/eve/gerar-grafico.js"></script>
+
+    <script src="../../scripts/eve/inputs.js"></script>
+    <script src="../../scripts/telefone.js"></script>
+    <script src="../../scripts/email.js"></script>
+
+    <script src="../../scripts/titulo.js"></script>
+    <script src="../../scripts/imprimir.js"></script>
 </body>
 
 </html>

@@ -21,5 +21,14 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("dia").textContent = dataAgora.dia;
     document.getElementById("mes").textContent = dataAgora.mes;
     document.getElementById("ano1").textContent = dataAgora.ano;
-    document.getElementById("ano2").textContent = dataAgora.ano;
+
+    var orcamento = document.getElementById('orcamento');
+    
+    if (orcamento) {
+        document.getElementById("ano2").textContent = dataAgora.ano;
+
+        console.log("Hoje: Orçamento - Ano 2 automático.");
+    } else {
+        console.log("Hoje: Tudo configurado.");
+    }
 });

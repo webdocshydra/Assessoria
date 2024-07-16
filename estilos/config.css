@@ -10,7 +10,7 @@
     --hydra-royal: #010080;
     --hydra-dark: #00002E;
 
-    --m3-surface: #fefefe;
+    --m3-surface: #f9f9f9;
     --m3-on-surface: #1a1a1a;
     --m3-outline: grey;
 }
@@ -78,6 +78,7 @@
     font-feature-settings: 'pnum' 1, 'lnum' 1;
 
     display: block;
+    width: auto;
 }
 
 .item button {
@@ -232,6 +233,80 @@ iframe {
     font-size: 14px;
 }
 
-input#i-total {
+input.dinheiro {
     padding-left: 30px;
+}
+
+.item-duplo {
+    display: grid;
+    grid-template-columns: 128px 128px;
+
+    width: auto;
+    column-gap: 10px;
+}
+
+#config2 {
+    margin: 20px 20px 0px 0px;
+    width: 300px;
+    box-sizing: border-box;
+    padding: 16px 16px 88px 16px;
+
+    background-color: var(--m3-surface);
+    border: 1px solid var(--m3-outline);
+    border-radius: 16px;
+
+    display: block;
+
+    position: relative;
+}
+
+#config2 header {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#config2 h1 {
+    color: var(--m3-on-surface);
+    font-family: 'Poppins';
+    font-size: 16px;
+    font-weight: 600;
+    font-feature-settings: 'pnum' 1, 'lnum' 1;
+
+    margin: 0px;
+}
+
+select {
+    width: auto;
+    height: 40px;
+    box-sizing: border-box;
+    padding-left: 8px;
+
+    border: 1px solid var(--m3-outline);
+    border-radius: 10px;
+
+    color: var(--m3-on-surface);
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 14px;
+}
+
+#calculos-resultados {
+    color: var(--m3-on-surface);
+    font-family: 'Poppins';
+    font-weight: normal;
+    font-size: 12px;
+}
+
+#calculos-resultados p {
+    margin: 0;
+}
+
+#calculos-resultados span {
+    font-weight: 500;
+}
+
+#calculos-resultados button {
+    margin-top: 4px;
 }

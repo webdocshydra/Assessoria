@@ -1,0 +1,118 @@
+/* CSS Document */
+
+@charset "utf-8";
+
+:root {
+    --despesas: #e06666;
+}
+
+#grafico {
+    width: 523px;
+    height: 260px;
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid var(--cor-1);
+    box-sizing: border-box;
+}
+
+#grafico-header {
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+#grafico-colunas {
+    width: 523px;
+    height: 200px;
+    display: grid;
+    grid-template-columns: 80px 84px 84px 84px 84px 84px;
+}
+
+#grafico-valores {
+    box-sizing: border-box;
+    border-right: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#grafico-footer {
+    height: 30px;
+    display: grid;
+    grid-template-columns: 80px 84px 84px 84px 84px 84px;
+}
+
+.gfc-valor {
+    color: black;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 10px;
+    text-align: right;
+    margin-right: 4px;
+}
+
+.gfc-footer {
+    color: black;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 4px;
+}
+
+.gfc-coluna {
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    align-items: end;
+    justify-content: center;
+    gap: 2px;
+}
+
+.coluna-receita {
+    background-color: var(--cor-1);
+    width: 20px;
+    height: 10px;
+    border-radius: 4px 4px 0px 0px;
+}
+
+.coluna-despesa {
+    background-color: var(--despesas);
+    width: 20px;
+    height: 10px;
+    border-radius: 4px 4px 0px 0px;
+}
+
+.header-legenda {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+.bloco-receita {
+    height: 12px;
+    width: 12px;
+    display: block;
+    border-radius: 2px;
+    background-color: var(--cor-1);
+}
+
+.bloco-despesa {
+    height: 12px;
+    width: 12px;
+    display: block;
+    border-radius: 2px;
+    background-color: var(--despesas);
+}
+
+.legenda {
+    color: black;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 12px;
+}

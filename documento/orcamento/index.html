@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <div id="orcamento"></div>
     <div id="config">
         <header>
             <img src="../../recursos/hydra/logo.svg" alt="LogoHydra" style="height: 36px;">
@@ -58,7 +59,7 @@
         <div class="item">
             <label for="i-total">Valor Total do Orçamento</label>
             <span id="simbolo-real">R$</span>
-            <input type="text" placeholder="1000,00" id="i-total">
+            <input type="text" placeholder="1000,00" class="dinheiro" id="i-total">
             <p class="info">Utilize somente números e vírgulas.</p>
         </div>
         <div class="item">
@@ -74,7 +75,7 @@
         <div class="pagina" id="capa">
             <header>
                 <img src="../../recursos/documentos/logo-asj.svg" alt="LogoAssessoria">
-                <div id="assessoria-nome">
+                <div id="assessoria-nomes">
                     <h1>ASJ</h1>
                     <h2>ASSESSORIA</h2>
                 </div>
@@ -144,17 +145,31 @@
             </div>
             <footer>2</footer>
         </div>
+        <div class="pagina" id="contracapa">
+            <header>
+                <img src="../../recursos/documentos/logo-asj-branca.svg" alt="LogoAssessoria">
+                <div id="assessoria-nomes">
+                    <h1>ASJ</h1>
+                    <h2>ASSESSORIA</h2>
+                </div>
+            </header>
+            <footer>AGRADECEMOS A PREFERÊNCIA</footer>
+        </div>
     </div>
     <script src="../../scripts/carregar.js"></script>
     <script src="../../scripts/hoje.js"></script>
-    <script src="../../scripts/consulta.js"></script>
-    <script src="../../scripts/verificar.js"></script>
-    <script src="../../scripts/preencher.js"></script>
-    <script src="../../scripts/inputs.js"></script>
+    
+    <script src="../../scripts/consulta/consulta.js"></script>
+    <script src="../../scripts/consulta/verificar.js"></script>
+    <script src="../../scripts/consulta/preencher.js"></script>
+    
     <script src="../../scripts/telefone.js"></script>
-    <script src="../../scripts/valor.js"></script>
-    <script src="../../scripts/imprimir.js"></script>
+
+    <script src="../../scripts/orcamento/inputs.js"></script>
+    <script src="../../scripts/orcamento/valor.js"></script>
+
     <script src="../../scripts/titulo.js"></script>
+    <script src="../../scripts/imprimir.js"></script>
 </body>
 
 </html>
