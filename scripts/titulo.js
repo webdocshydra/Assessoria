@@ -9,43 +9,43 @@ document.addEventListener('DOMContentLoaded', function() {
     var cnpj = document.getElementById('cnpj').textContent;
     
     if (orcamento) {
-        console.log("Título: Orçamento");
+        console.log('Título: Orçamento');
 
         exportar.addEventListener('click', () => {
             var total = document.getElementById('total').textContent;
 
-            document.title = "ASJ Assessoria [Orçamento de R$ " + total + "] - " + cnpj;
+            document.title = 'ASJ Assessoria [Orçamento de R$ ' + total + '] - ' + cnpj;
         });
 
-    } if (eve) {
-        console.log("Título: EVE");
+    } else if (eve) {
+        console.log('Título: EVE');
 
         exportar.addEventListener('click', () => {      
-            document.title = "ASJ Assessoria - Estudo de Viabilidade Econômica [" + cnpj + "]";
+            document.title = 'ASJ Assessoria - Estudo de Viabilidade Econômica [' + cnpj + ']';
         });
 
-    } if (bv) {
-        console.log("Título: BV");
+    } else if (bv) {
+        console.log('Título: BV');
 
         exportar.addEventListener('click', () => {      
-            document.title = "ASJ Assessoria - Business Valuation [" + cnpj + "]";
+            document.title = 'ASJ Assessoria - Business Valuation [' + cnpj + ']';
         });
 
-    } if (dmpl) {
-        console.log("Título: DMPL");
+    } else if (dmpl) {
+        console.log('Título: DMPL');
 
         exportar.addEventListener('click', () => {
-           document.title = "ASJ Assessoria - Demonstração das Mutações do Patrimônio Líquido [" + cnpj + "]";
+           document.title = 'ASJ Assessoria - Demonstração das Mutações do Patrimônio Líquido [' + cnpj + ']';
         });
         
-    } if (contrato) {
-        console.log("Título: Contrato");
+    } else if (contrato) {
+        console.log('Título: Contrato');
 
         exportar.addEventListener('click', () => {     
-            document.title = "ASJ Assessoria - Contrato de Serviço [" + cnpj + "]";
+            document.title = 'ASJ Assessoria - Contrato de Serviço [' + cnpj + ']';
         });
 
     } else {
-        console.log("Título: Documento não identificado.");
+        console.log('Título: Documento não identificado.');
     }
 });

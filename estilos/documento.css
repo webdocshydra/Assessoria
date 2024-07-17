@@ -311,6 +311,7 @@ span#pag-texto {
 }
 
 #pagina2 footer{
+    width: 523px;
     position: absolute;
     bottom: 24px;
     right: 36px;
@@ -322,6 +323,10 @@ span#pag-texto {
     line-height: 15px;
     text-align: right;
     font-feature-settings: 'pnum' 1, 'lnum' 1;
+
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: space-between;
 }
 
 p#tratamento-dados {
@@ -407,4 +412,56 @@ p#tratamento-dados {
     white-space: normal;
     word-wrap: break-word;
     line-height: 17px;
+}
+
+#selo {
+    width: 230px;
+    height: 88px;
+    box-sizing: border-box;
+
+    padding: 8px 8px 8px 16px;
+    background-color: var(--cor-1);
+    border-radius: 4px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 14px;
+    text-align: left;
+    line-height: 17px;
+}
+
+#selo-qr {
+    display: flex;
+    justify-content: center;
+    width: 68px;
+    height: 68px;
+    box-sizing: content-box;
+    padding: 2px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    position: relative;
+}
+
+#qr-logo {
+    position: absolute;
+    align-self: center;
+
+    width: 12px;
+    height: 12px;
+    box-sizing: content-box;
+
+    padding: 3px 3px 3px 3px;
+    background-color: var(--cor-1);
+    border: 1px solid white;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

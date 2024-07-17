@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const exportar = document.getElementById('exportar');
     const config = document.getElementById('config');
+    const config2 = document.getElementById('config2');
     const documento = document.getElementById('documento');
     const capa = document.getElementById('capa');
     const pagina1 = document.getElementById('pagina1');
@@ -52,6 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (exportar && config) {
         exportar.addEventListener('click', () => {
             config.style.display = 'none';
+            if (config2) {
+                config2.style.display = 'none'
+            } else {
+                console.log('Config2: Não existe.');
+            }
             
             documento.style.gap = '0px';
 
@@ -85,6 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             setTimeout(() => {
                 config.style.display = 'block';
+                if (config2) {
+                    config2.style.display = 'block'
+                } else {
+                    console.log('Config2: Não existe.');
+                }
 
                 documento.style.gap = '10px';
 

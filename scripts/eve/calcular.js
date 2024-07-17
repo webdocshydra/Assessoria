@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('calculo-div').style.display = 'none';
+    document.getElementById('calculos-resultados').style.display = 'none';
+
     document.getElementById('calcular').addEventListener('click', function() {
         // Função para converter o valor de string para número, considerando a vírgula como separador decimal
         function parseValue(value) {
@@ -43,5 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
         let calculoVPL = ((b9 * 5) - ((b9 * 5) / 100 * 34.48)) + (b9 + (b9 / 100 * 301.8));
         document.getElementById('calculo-vpl').textContent = formatCurrency(calculoVPL);
         document.getElementById('vpl').textContent = formatCurrency(calculoVPL);
+
+        document.getElementById('calculo-div').style.display = 'block';
+        document.getElementById('calculos-resultados').style.display = 'flex';
     });
 });
